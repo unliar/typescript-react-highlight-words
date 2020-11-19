@@ -1,6 +1,6 @@
 {
   "name": "typescipt-react-hightlight-words",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "hightlight words in react",
   "main": "dist/index.umd.js",
   "scripts": {
