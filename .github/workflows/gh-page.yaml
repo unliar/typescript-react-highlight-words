@@ -22,6 +22,11 @@ jobs:
         run: |
           npm install
           npm run build
+          cd ..
+          git config --global user.name "unliar"
+          git config --global user.email "370732889@qq.com"
+          git add .
+          git commit -am "github action auto-commit" && git push
       - name: wechat-work-bot-success
         uses: chf007/action-wechat-work@master
         env:
