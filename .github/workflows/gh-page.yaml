@@ -23,7 +23,6 @@ jobs:
         working-directory: examples
         run: |
           npm install
-          npm run test
           npm run build
           cd ..
           git config --global user.name "unliar"
