@@ -19,10 +19,12 @@ const HighlightWords = (props: HighlightWordsIProps) => {
     hightlightTag = "mark",
     wrapperTag = React.Fragment,
   } = props
-  if (props.words.length == 0) {
+  // 过滤空值,存在空值正则会出错
+  const keys = words.filter((i) => !!i)
+  if (keys.length == 0) {
     return React.createElement(wrapperTag, null, text)
   }
-  const reg = new RegExp(words.join("|"), "g")
+  const reg = new RegExp(keys.join("|"), "g")
   const eles = text
     .replace(reg, "#@$&#")
     .split("#")
