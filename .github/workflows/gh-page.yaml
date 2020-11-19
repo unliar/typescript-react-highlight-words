@@ -1,0 +1,41 @@
+name: gh-page
+
+on: [push]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ["14"]
+    name: Node Version ${{ matrix.node }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: 'get-previous-tag'
+        id: previoustag
+        uses: "WyriHaximus/github-action-get-previous-tag@master"
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - run: cd examples
+      - run: npm install
+      - run: npm run build
+      - name: wechat-work-bot-success
+        uses: chf007/action-wechat-work@master
+        env:
+          WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
+        with:
+          msgtype: markdown
+          content: "#### ✅ [typescipt-react-hightlight-words gh-page 发布成功](https://github.com/${{github.repository}}) \n
+          "
+      - name: wechat-work-bot-failed-build
+        if: ${{ failure() }}
+        uses: chf007/action-wechat-work@master
+        env:
+          WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
+        with:
+          msgtype: markdown
+          content: "#### ❎ [typescipt-react-hightlight-words gh-page 发布失败](https://github.com/${{github.repository}}) \n
+          " 
