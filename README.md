@@ -6,8 +6,17 @@
 
 ## How To Use
 
+> you can find demos in examples/\_\_tests\_\_ folder
+
 ```
 import HighlightWords from "typescript-react-hightlight-words";
 
-// then see __tests__ floder
+
+<HightLight
+    text="this is a demo for you"
+    words={["demo"]}
+    hightlightTag="span"
+    wrapperTag="div"
+    hightlightStyle={{ color: "red" }}
+/>
 ```
