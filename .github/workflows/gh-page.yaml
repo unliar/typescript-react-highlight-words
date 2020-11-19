@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-      - name: install
+      - name: poi
         working-directory: examples
         run: |
           npm install
