@@ -3,8 +3,11 @@ name: gh-page
 on: [push]
 
 jobs:
+  
   publish:
     runs-on: ubuntu-latest
+    env:
+      working-directory: examples
     strategy:
       matrix:
         node: ["14"]
@@ -19,7 +22,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-      - run: cd examples
       - run: npm install
       - run: npm run build
       - name: wechat-work-bot-success
