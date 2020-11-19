@@ -1,0 +1,31 @@
+{
+  "name": "react-hightlight-words",
+  "version": "1.0.0",
+  "description": "hightlight words in react",
+  "main": "dist/index.umd.js",
+  "scripts": {
+    "test": "npm test",
+    "build": "bili"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unliar/react-hightlight-words.git"
+  },
+  "keywords": [
+    "react",
+    "hightlight"
+  ],
+  "author": "unliar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/unliar/react-hightlight-words/issues"
+  },
+  "homepage": "https://github.com/unliar/react-hightlight-words#readme",
+  "devDependencies": {
+    "@types/react": "^16.9.56",
+    "bili": "^5.0.5",
+    "react": "^17.0.1",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "typescript": "^4.0.5"
+  }
+}
