@@ -1,7 +1,9 @@
 name: gh-page
 
-on: [push]
-
+on: 
+  push:
+    branches:
+      - main
 jobs:
   
   publish:
