@@ -14,11 +14,6 @@ jobs:
     name: Node Version ${{ matrix.node }}
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: 'get-previous-tag'
-        id: previoustag
-        uses: "WyriHaximus/github-action-get-previous-tag@master"
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
