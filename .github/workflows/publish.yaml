@@ -11,9 +11,14 @@ jobs:
     strategy:
       matrix:
         node: ["14"]
-    name: Node ${{ matrix.node }} test
+    name: Node Version ${{ matrix.node }}
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: 'get-previous-tag'
+        id: previoustag
+        uses: "WyriHaximus/github-action-get-previous-tag@master"
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
@@ -23,3 +28,22 @@ jobs:
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
+      - name: wechat-work-bot-success
+        uses: chf007/action-wechat-work@master
+        env:
+          WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
+        with:
+          msgtype: markdown
+          content: "#### ✅ [typescipt-react-hightlight-words 发布成功](https://github.com/${{github.repository}}) \n
+          > desc: TAG=${{ steps.previoustag.outputs.tag }}
+          "
+      - name: wechat-work-bot-failed-build
+        if: ${{ failure() }}
+        uses: chf007/action-wechat-work@master
+        env:
+          WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
+        with:
+          msgtype: markdown
+          content: "#### ❎ [typescipt-react-hightlight-words 发布失败](https://github.com/${{github.repository}}) \n
+          > desc: TAG=${{ steps.previoustag.outputs.tag }} 
+          " 
