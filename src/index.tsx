@@ -1,5 +1,5 @@
-import React from "react";
-import { HighlightWordsIProps } from "../types";
+import React from "react"
+import { HighlightWordsIProps } from "../types"
 
 const HighlightWords = (props: HighlightWordsIProps) => {
   const {
@@ -8,11 +8,11 @@ const HighlightWords = (props: HighlightWordsIProps) => {
     hightlightStyle,
     hightlightTag = "mark",
     wrapperTag = "span",
-  } = props;
+  } = props
   if (props.words.length == 0) {
-    return React.createElement(wrapperTag, null, text);
+    return React.createElement(wrapperTag, null, text)
   }
-  const reg = new RegExp(words.join("|"), "g");
+  const reg = new RegExp(words.join("|"), "g")
   const eles = text
     .replace(reg, "#@$&#")
     .split("#")
@@ -26,8 +26,8 @@ const HighlightWords = (props: HighlightWordsIProps) => {
             t.slice(1)
           )
         : t
-    );
-  return React.createElement(wrapperTag, null, ...eles);
-};
+    )
+  return React.createElement(wrapperTag, null, ...eles)
+}
 
-export default HighlightWords;
+export default HighlightWords
