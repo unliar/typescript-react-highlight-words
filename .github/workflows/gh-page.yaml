@@ -17,8 +17,11 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-      - run: npm install
-      - run: npm run build
+      - name: install
+        working-directory: examples
+        run: |
+          npm install
+          npm run build
       - name: wechat-work-bot-success
         uses: chf007/action-wechat-work@master
         env:
