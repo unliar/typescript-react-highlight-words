@@ -3,5 +3,6 @@ module.exports = {
   reactRefresh: true,
   output: {
     dir: "../docs",
+    publicUrl: "https://unliar.github.io/react-hightlight-words",
   },
 }
