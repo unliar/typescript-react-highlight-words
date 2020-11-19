@@ -1,4 +1,4 @@
-name: run publish
+name: publish
 
 on:
   push:
