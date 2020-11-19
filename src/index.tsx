@@ -6,9 +6,9 @@ export type Tags = keyof HTMLElementTagNameMap
 export interface HighlightWordsIProps {
   text: string
   words: string[] // if empty array input , will render text with wrapperTag
-  wrapperTag?: Tags // outer tag default = span
-  hightlightTag?: Tags // default = mark
-  hightlightStyle?: CSSProperties
+  wrapperTag?: Tags // wrapper text tag, defaultValue = React.Fragment
+  hightlightTag?: Tags // wrapper hit words tag, defaultValue = mark
+  hightlightStyle?: CSSProperties // your hightlight style, no defaultValue
 }
 
 const HighlightWords = (props: HighlightWordsIProps) => {
@@ -17,7 +17,7 @@ const HighlightWords = (props: HighlightWordsIProps) => {
     text,
     hightlightStyle,
     hightlightTag = "mark",
-    wrapperTag = "span",
+    wrapperTag = React.Fragment,
   } = props
   if (props.words.length == 0) {
     return React.createElement(wrapperTag, null, text)

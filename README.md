@@ -15,7 +15,6 @@
 ```
 import HighlightWords from "typescript-react-hightlight-words";
 
-
 <HightLight
     text="this is a demo for you"
     words={["demo"]}
