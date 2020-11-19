@@ -3,7 +3,7 @@
     "experimentalDecorators": true,
     "target": "esnext",
     "module": "esnext",
-    "jsx": "preserve",
+    "jsx": "react",
     "lib": ["dom", "es2017"],
     "baseUrl": "./src",
     "moduleResolution": "node",
@@ -23,5 +23,5 @@
     "resolveJsonModule": true
   },
   "exclude": ["dist"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": ["types/*"]
 }

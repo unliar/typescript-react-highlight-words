@@ -1,20 +1,17 @@
-import React, { CSSProperties } from "react";
-interface HighlightWordsIProps {
-  text: string;
-  words: string[];
-  wrapperTag?: string; // outer tag default = span
-  hightlightTag?: string; // default = mark
-  style?: CSSProperties;
-}
+import React from "react";
+import { HighlightWordsIProps } from "../types";
 
 const HighlightWords = (props: HighlightWordsIProps) => {
   const {
     words,
     text,
-    style,
+    hightlightStyle,
     hightlightTag = "mark",
     wrapperTag = "span",
   } = props;
+  if (props.words.length == 0) {
+    return React.createElement(wrapperTag, null, text);
+  }
   const reg = new RegExp(words.join("|"), "g");
   const token = text.replace(reg, "#@$&#");
   const elements = token.split("#").map((x) =>
@@ -22,7 +19,7 @@ const HighlightWords = (props: HighlightWordsIProps) => {
       ? React.createElement(
           hightlightTag,
           {
-            style,
+            style: hightlightStyle,
           },
           x.slice(1)
         )
