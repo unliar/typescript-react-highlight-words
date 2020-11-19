@@ -10,7 +10,7 @@
     "src"
   ],
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "build": "bili",
     "commit": "git-cz"
   },
