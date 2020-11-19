@@ -1,6 +1,6 @@
 {
   "name": "@unliar/react-hightlight-words",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "hightlight words in react",
   "main": "dist/index.umd.js",
   "scripts": {
