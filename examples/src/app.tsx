@@ -8,6 +8,11 @@ function App() {
           typescript-react-hightlight-words
         </a>{" "}
       </h1>
+      <p>
+        <a href="https://github.com/unliar/react-hightlight-words/blob/main/examples/src/app.tsx">
+          source code
+        </a>
+      </p>
       <h2> as components</h2>
       <HightLight
         text="this is a demo for you as components"
