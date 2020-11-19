@@ -1,4 +1,4 @@
-name: run test
+name: run publish
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - "*"
 
 jobs:
-  test:
+  publish:
     runs-on: ubuntu-latest
     strategy:
       matrix:
