@@ -1,5 +1,5 @@
 {
-  "name": "@unliar/react-hightlight-words",
+  "name": "typescipt-react-hightlight-words",
   "version": "0.0.1",
   "description": "hightlight words in react",
   "main": "dist/index.umd.js",
@@ -36,9 +36,6 @@
     "rollup-plugin-typescript2": "^0.29.0",
     "ts-jest": "^26.4.4",
     "typescript": "^4.0.5"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
     "react": "^17.0.1",
