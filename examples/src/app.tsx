@@ -20,8 +20,8 @@ function App() {
       <div>
         {HightLight({
           text: "this is a demo for you as function",
-          words: ["demo"],
-          hightlightStyle: { color: "red" },
+          words: ["function", "for"],
+          hightlightStyle: { color: "blue" },
         })}
       </div>
     </div>
