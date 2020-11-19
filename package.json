@@ -1,6 +1,6 @@
 {
   "name": "typescript-react-hightlight-words",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "hightlight words in react",
   "main": "dist/index.umd.js",
   "types": "types/index.d.ts",
