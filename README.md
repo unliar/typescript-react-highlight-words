@@ -6,7 +6,7 @@
 
 ## Demo Page
 
-> [gh-page](https://unliar.github.io/react-hightlight-words/)
+> [click me~](https://unliar.github.io/react-hightlight-words/)
 
 ## How To Use
 

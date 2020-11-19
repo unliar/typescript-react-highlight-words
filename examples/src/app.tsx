@@ -3,7 +3,11 @@ import HightLight from "typescript-react-hightlight-words"
 function App() {
   return (
     <div className="app">
-      <h1>typescript-react-hightlight-words</h1>
+      <h1>
+        <a href="https://github.com/unliar/react-hightlight-words">
+          typescript-react-hightlight-words
+        </a>{" "}
+      </h1>
       <h2> as components</h2>
       <HightLight
         text="this is a demo for you as components"

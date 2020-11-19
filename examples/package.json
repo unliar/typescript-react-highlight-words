@@ -1,5 +1,5 @@
 {
-  "name": "examples",
+  "name": "react-hightlight-words",
   "private": true,
   "scripts": {
     "build": "poi --prod",
