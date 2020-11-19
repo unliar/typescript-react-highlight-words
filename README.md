@@ -4,13 +4,19 @@
 
 > ![publish](https://github.com/unliar/react-hightlight-words/workflows/publish/badge.svg) ![npm](https://img.shields.io/npm/v/typescript-react-hightlight-words) ![GitHub last commit](https://img.shields.io/github/last-commit/unliar/react-hightlight-words) ![npm](https://img.shields.io/npm/dt/typescript-react-hightlight-words)
 
+## What Can The Lib Do?
+
+See the picture below
+
+![hi](https://cdn.gelonghui.com/ad/4f802-6d0096d3-5faf-4e0d-a404-13cd803e9b89.png)
+
 ## Demo Page
 
-> [click me~](https://unliar.github.io/react-hightlight-words/)
+[click me~](https://unliar.github.io/react-hightlight-words/)
 
 ## How To Use
 
-> you can find demos in examples/\_\_tests\_\_ folder
+you can find demos in examples / \_\_tests\_\_ folder
 
 ```
 import HighlightWords from "typescript-react-hightlight-words";
