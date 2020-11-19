@@ -1,12 +1,13 @@
 {
-  "name": "typescipt-react-hightlight-words",
-  "version": "0.0.4",
+  "name": "typescript-react-hightlight-words",
+  "version": "2.0.3",
   "description": "hightlight words in react",
   "main": "dist/index.umd.js",
   "types": "types/index.d.ts",
   "files": [
     "dist",
-    "types"
+    "types",
+    "src"
   ],
   "scripts": {
     "test": "jest",
