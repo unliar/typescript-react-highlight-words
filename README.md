@@ -4,6 +4,10 @@
 
 > ![publish](https://github.com/unliar/react-hightlight-words/workflows/publish/badge.svg) ![npm](https://img.shields.io/npm/v/typescript-react-hightlight-words) ![GitHub last commit](https://img.shields.io/github/last-commit/unliar/react-hightlight-words) ![npm](https://img.shields.io/npm/dt/typescript-react-hightlight-words)
 
+## Demo Page
+
+> [gh-page](https://unliar.github.io/react-hightlight-words/)
+
 ## How To Use
 
 > you can find demos in examples/\_\_tests\_\_ folder
