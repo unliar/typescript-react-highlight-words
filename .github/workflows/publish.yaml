@@ -34,7 +34,7 @@ jobs:
           WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
         with:
           msgtype: markdown
-          content: "#### ✅ [typescipt-react-hightlight-words 发布成功](https://github.com/${{github.repository}}) \n
+          content: "#### ✅ [typescipt-react-hightlight-words](https://github.com/${{github.repository}})  npm publish 成功\n
           > desc: TAG=${{ steps.previoustag.outputs.tag }}
           "
       - name: wechat-work-bot-failed-build
@@ -44,6 +44,6 @@ jobs:
           WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
         with:
           msgtype: markdown
-          content: "#### ❎ [typescipt-react-hightlight-words 发布失败](https://github.com/${{github.repository}}) \n
+          content: "#### ❎ [typescipt-react-hightlight-words](https://github.com/${{github.repository}}) npm publish 失败\n
           > desc: TAG=${{ steps.previoustag.outputs.tag }} 
           " 

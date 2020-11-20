@@ -35,7 +35,7 @@ jobs:
           WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
         with:
           msgtype: markdown
-          content: "#### ✅ [typescipt-react-hightlight-words gh-page 发布成功](https://github.com/${{github.repository}}) \n
+          content: "#### ✅ [typescipt-react-hightlight-words](https://github.com/${{github.repository}})  gh-page 发布成功 \n
           link: [website](https://unliar.github.io/react-hightlight-words/)
           "
       - name: wechat-work-bot-failed-build
@@ -45,6 +45,6 @@ jobs:
           WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
         with:
           msgtype: markdown
-          content: "#### ❎ [typescipt-react-hightlight-words gh-page 发布失败](https://github.com/${{github.repository}}) \n
+          content: "#### ❎ [typescipt-react-hightlight-words](https://github.com/${{github.repository}})  gh-page 发布失败 \n
           link: [website](https://unliar.github.io/react-hightlight-words/)
           " 
