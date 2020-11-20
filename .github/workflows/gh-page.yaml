@@ -36,7 +36,7 @@ jobs:
         with:
           msgtype: markdown
           content: "#### ✅ [typescipt-react-hightlight-words](https://github.com/${{github.repository}})  gh-page 发布成功 \n
-          link: [website](https://unliar.github.io/react-hightlight-words/)
+          link: [click me](https://unliar.github.io/typescript-react-hightlight-words/)
           "
       - name: wechat-work-bot-failed-build
         if: ${{ failure() }}
@@ -46,5 +46,5 @@ jobs:
         with:
           msgtype: markdown
           content: "#### ❎ [typescipt-react-hightlight-words](https://github.com/${{github.repository}})  gh-page 发布失败 \n
-          link: [website](https://unliar.github.io/react-hightlight-words/)
+          link: [click me](https://unliar.github.io/typescript-react-hightlight-words/)
           " 
