@@ -26,20 +26,20 @@ const HighlightWords = (props: HighlightWordsIProps) => {
   }
   // add mark
   const reg = new RegExp(keys.join("|"), "g")
-  const arr: React.ReactElement[] = []
-  text.replace(reg, (i) => {
-    arr.push(
-      React.createElement(
-        hightlightTag,
-        {
-          style: hightlightStyle,
-        },
-        i
-      )
+  const arr = text
+    .replace(reg, (i) => `#@${i}#`)
+    .split("#")
+    .map((i) =>
+      i[0] === "@"
+        ? React.createElement(
+            hightlightTag,
+            {
+              style: hightlightStyle,
+            },
+            i.slice(1)
+          )
+        : i
     )
-    // no need for the result, return empty string
-    return ""
-  })
   return React.createElement(wrapperTag, null, ...arr)
 }
 
