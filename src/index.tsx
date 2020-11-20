@@ -19,27 +19,28 @@ const HighlightWords = (props: HighlightWordsIProps) => {
     hightlightTag = "mark",
     wrapperTag = React.Fragment,
   } = props
-  // 过滤空值,存在空值正则会出错
-  const keys = words.filter((i) => !!i)
-  if (keys.length == 0) {
-    return React.createElement(wrapperTag, null, text)
+  // filter empty words and empty text
+  const keys = words?.filter((i) => !!i)
+  if (!keys?.length || !text?.length) {
+    return React.createElement(wrapperTag, null, "")
   }
+  // add mark
   const reg = new RegExp(keys.join("|"), "g")
-  const eles = text
-    .replace(reg, "#@$&#")
-    .split("#")
-    .map((t) =>
-      t[0] === "@"
-        ? React.createElement(
-            hightlightTag,
-            {
-              style: hightlightStyle,
-            },
-            t.slice(1)
-          )
-        : t
+  const arr: React.ReactElement[] = []
+  text.replace(reg, (i) => {
+    arr.push(
+      React.createElement(
+        hightlightTag,
+        {
+          style: hightlightStyle,
+        },
+        i
+      )
     )
-  return React.createElement(wrapperTag, null, ...eles)
+    // no need for the result, return empty string
+    return ""
+  })
+  return React.createElement(wrapperTag, null, ...arr)
 }
 
 export default HighlightWords
