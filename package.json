@@ -2,7 +2,8 @@
   "name": "typescript-react-hightlight-words",
   "version": "2.0.11",
   "description": "hightlight words in react",
-  "main": "dist/index.umd.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "types": "types/index.d.ts",
   "files": [
     "dist",

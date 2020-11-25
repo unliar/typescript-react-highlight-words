@@ -10,7 +10,9 @@ export interface HighlightWordsIProps {
   hightlightTag?: Tags // wrapper hit words tag, defaultValue = mark
   hightlightStyle?: CSSProperties // your hightlight style, no defaultValue
 }
-
+export const SafeRegExpString = (str: string) => {
+  return str.replace(/[.*+?^${}()[\]\\]/g, "")
+}
 const HighlightWords = (props: HighlightWordsIProps) => {
   const {
     words,
@@ -25,7 +27,7 @@ const HighlightWords = (props: HighlightWordsIProps) => {
     return React.createElement(wrapperTag, null, "")
   }
   // add mark
-  const reg = new RegExp(keys.join("|"), "g")
+  const reg = new RegExp(SafeRegExpString(keys.join("|")), "g")
   const arr = text
     .replace(reg, (i) => `#@${i}#`)
     .split("#")

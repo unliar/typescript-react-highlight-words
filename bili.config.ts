@@ -1,13 +1,13 @@
-import { Config } from "bili";
+import { Config } from "bili"
 
 const config: Config = {
   input: "src/index.tsx",
   output: {
-    format: ["es", "module", "umd"],
+    format: ["cjs", "esm"],
     moduleName: "ReactHightlightWords",
     sourceMap: false,
     minify: true,
   },
-};
+}
 
-export default config;
+export default config
