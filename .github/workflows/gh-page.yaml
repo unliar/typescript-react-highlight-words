@@ -24,11 +24,11 @@ jobs:
         run: |
           npm install
           npm run build
-          cd ..
-          git config --global user.name "unliar"
-          git config --global user.email "370732889@qq.com"
-          git add .
-          git commit -am "github action auto-commit" && git push || echo "none commit"
+      - uses: maxheld83/ghpages@v0.3.0
+        name: GitHub Pages Deploy
+        env:
+          BUILD_DIR: "examples/dist/"
+          GH_PAT: ${{ secrets.GH_PAT }}
       - name: wechat-work-bot-success
         uses: chf007/action-wechat-work@master
         env:
