@@ -28,7 +28,7 @@ jobs:
       - uses: maxheld83/ghpages@v0.3.0
         name: GitHub Pages Deploy
         env:
-          BUILD_DIR: "examples/dist/"
+          BUILD_DIR: "dist/"
           GH_PAT: ${{ secrets.GH_PAT }}
       - name: wechat-work-bot-success
         uses: chf007/action-wechat-work@master
