@@ -28,6 +28,11 @@ jobs:
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
+      - name: Generate site
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: site
+          token: ${{ secrets.GH_PAT }}    
       - name: wechat-work-bot-success
         uses: chf007/action-wechat-work@master
         env:
