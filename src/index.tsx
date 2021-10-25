@@ -1,3 +1,9 @@
+/*
+ * @Author: tanzhiyu
+ * @Date: 2021-10-25 17:39:05
+ * @LastEditors: tanzhiyu
+ * @LastEditTime: 2021-10-25 18:02:44
+ */
 import React from "react"
 import { CSSProperties } from "react"
 
@@ -9,6 +15,7 @@ export interface HighlightWordsIProps {
   wrapperTag?: Tags // wrapper text tag, defaultValue = React.Fragment
   hightlightTag?: Tags // wrapper hit words tag, defaultValue = mark
   hightlightStyle?: CSSProperties // your hightlight style, no defaultValue
+  splitString?: string
 }
 export const SafeRegExpString = (str: string) => {
   return str.replace(/[.*+?^${}()[\]\\]/g, "")
@@ -20,6 +27,7 @@ const HighlightWords = (props: HighlightWordsIProps) => {
     hightlightStyle,
     hightlightTag = "mark",
     wrapperTag = React.Fragment,
+    splitString = "#",
   } = props
   // filter empty words and empty text
   const keys = words?.filter((i) => !!i)
@@ -29,8 +37,8 @@ const HighlightWords = (props: HighlightWordsIProps) => {
   // add mark
   const reg = new RegExp(SafeRegExpString(keys.join("|")), "g")
   const arr = text
-    .replace(reg, (i) => `#@${i}#`)
-    .split("#")
+    .replace(reg, (i) => `${splitString}@${i}${splitString}`)
+    .split(splitString)
     .map((i) =>
       i[0] === "@"
         ? React.createElement(
