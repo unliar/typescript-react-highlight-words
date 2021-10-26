@@ -29,11 +29,12 @@ const HighlightWords = (props: HighlightWordsIProps) => {
     wrapperTag = React.Fragment,
     splitString = "#",
   } = props
-  // filter empty words and empty text
   const keys = words?.filter((i) => !!i)
-  if (!keys?.length || !text?.length) {
+  // if empty words input, return render text
+  if (!keys.length) {
     return React.createElement(wrapperTag, null, text)
   }
+
   // add mark
   const reg = new RegExp(SafeRegExpString(keys.join("|")), "g")
   const arr = text

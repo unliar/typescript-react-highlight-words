@@ -25,7 +25,6 @@ test("customer tag render", () => {
       words={["tag"]}
     ></HighlightWords>
   )
-  // 命中两个
   expect(dom.container.querySelector("span")).toBeTruthy()
   expect(dom.container.querySelector("h6")).toBeTruthy()
 })
@@ -45,13 +44,6 @@ test("customer hightlightStyle render", () => {
   ).toBeTruthy()
 })
 
-test("no words render", () => {
-  const text = "hello world"
-  const dom = render(<HighlightWords text={text} words={[]}></HighlightWords>)
-  // 命中两个
-  expect(dom.container.querySelectorAll("mark").length == 0).toBeTruthy()
-})
-
 test("no words hit", () => {
   const text = "hello world"
   const dom = render(
@@ -65,4 +57,13 @@ test("empty render", () => {
   const text = ""
   const dom = render(<HighlightWords text={text} words={[""]}></HighlightWords>)
   expect(dom.container.innerHTML == "").toBeTruthy()
+})
+
+test("empty words hit", () => {
+  const text = "hello world"
+  const dom = render(<HighlightWords text={text} words={[""]}></HighlightWords>)
+  // 内容返回原始内容
+  expect(dom.container.innerHTML == text).toBeTruthy()
+  // 无任何标记节点
+  expect(dom.container.querySelectorAll("mark").length == 0).toBeTruthy()
 })
