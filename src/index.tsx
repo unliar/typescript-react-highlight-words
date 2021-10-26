@@ -2,7 +2,7 @@
  * @Author: tanzhiyu
  * @Date: 2021-10-25 17:39:05
  * @LastEditors: tanzhiyu
- * @LastEditTime: 2021-10-25 18:02:44
+ * @LastEditTime: 2021-10-26 17:26:14
  */
 import React from "react"
 import { CSSProperties } from "react"
@@ -32,7 +32,7 @@ const HighlightWords = (props: HighlightWordsIProps) => {
   // filter empty words and empty text
   const keys = words?.filter((i) => !!i)
   if (!keys?.length || !text?.length) {
-    return React.createElement(wrapperTag, null, "")
+    return React.createElement(wrapperTag, null, text)
   }
   // add mark
   const reg = new RegExp(SafeRegExpString(keys.join("|")), "g")
