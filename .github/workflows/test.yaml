@@ -23,20 +23,18 @@ jobs:
         run: |
           npm install
           npm run test
-      - name: wechat-work-bot-success
-        uses: chf007/action-wechat-work@master
-        env:
-          WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
+      - name: feishu-bot-message
+        if: always()
+        uses: foxundermoon/feishu-action@v2
         with:
-          msgtype: markdown
-          content: "#### ✅ [typescipt-react-hightlight-words](https://github.com/${{github.repository}}) 单元测试成功  \n
-          "
-      - name: wechat-work-bot-failed-build
-        if: ${{ failure() }}
-        uses: chf007/action-wechat-work@master
-        env:
-          WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
-        with:
-          msgtype: markdown
-          content: "#### ❎ [typescipt-react-hightlight-words](https://github.com/${{github.repository}}) 单元测试失败 \n
-          " 
+          url: ${{ secrets.FEISHU_BOT_WEBHOOK_URL }}
+          msg_type: text
+          content: |
+            text: |
+              ⭕️ 单元测试状态 - ${{ job.status }} 
+              
+              repository: https://github.com/${{ github.repository }}
+
+              committer: https://github.com/${{ github.actor }}
+              
+              compare: ${{ github.event.compare }}

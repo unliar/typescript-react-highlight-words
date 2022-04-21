@@ -32,23 +32,21 @@ jobs:
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: site
-          token: ${{ secrets.GH_PAT }}    
-      - name: wechat-work-bot-success
-        uses: chf007/action-wechat-work@master
-        env:
-          WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
+          token: ${{ secrets.GH_PAT }}     
+      - name: feishu-bot-message
+        if: always()
+        uses: foxundermoon/feishu-action@v2
         with:
-          msgtype: markdown
-          content: "#### ✅ [typescipt-react-hightlight-words](https://github.com/${{github.repository}})  npm publish 成功\n
-          > desc: TAG=${{ steps.previoustag.outputs.tag }}
-          "
-      - name: wechat-work-bot-failed-build
-        if: ${{ failure() }}
-        uses: chf007/action-wechat-work@master
-        env:
-          WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
-        with:
-          msgtype: markdown
-          content: "#### ❎ [typescipt-react-hightlight-words](https://github.com/${{github.repository}}) npm publish 失败\n
-          > desc: TAG=${{ steps.previoustag.outputs.tag }} 
-          " 
+          url: ${{ secrets.FEISHU_BOT_WEBHOOK_URL }}
+          msg_type: text
+          content: |
+            text: |
+              ⭕️ npm publish 状态 - ${{ job.status }} 
+              
+              repository: https://github.com/${{ github.repository }}
+
+              committer: https://github.com/${{ github.actor }}
+              
+              compare: ${{ github.event.compare }}
+
+              desc: TAG=${{ steps.previoustag.outputs.tag }} 

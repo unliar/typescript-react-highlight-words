@@ -27,22 +27,21 @@ jobs:
         env:
           BUILD_DIR: "examples/dist/"
           GH_PAT: ${{ secrets.GH_PAT }}
-      - name: wechat-work-bot-success
-        uses: chf007/action-wechat-work@master
-        env:
-          WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
+
+      - name: feishu-bot-message
+        if: always()
+        uses: foxundermoon/feishu-action@v2
         with:
-          msgtype: markdown
-          content: "#### ✅ [typescipt-react-hightlight-words](https://github.com/${{github.repository}})  gh-page 发布成功 \n
-          link: [click me](https://unliar.github.io/typescript-react-hightlight-words/)
-          "
-      - name: wechat-work-bot-failed-build
-        if: ${{ failure() }}
-        uses: chf007/action-wechat-work@master
-        env:
-          WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
-        with:
-          msgtype: markdown
-          content: "#### ❎ [typescipt-react-hightlight-words](https://github.com/${{github.repository}})  gh-page 发布失败 \n
-          link: [click me](https://unliar.github.io/typescript-react-hightlight-words/)
-          " 
+          url: ${{ secrets.FEISHU_BOT_WEBHOOK_URL }}
+          msg_type: text
+          content: |
+            text: |
+              ⭕️ gh-page 部署状态 - ${{ job.status }} 
+              
+              repository: https://github.com/${{ github.repository }}
+
+              committer: https://github.com/${{ github.actor }}
+              
+              compare: ${{ github.event.compare }}
+
+              online: https://unliar.github.io/typescript-react-hightlight-words/
