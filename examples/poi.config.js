@@ -2,6 +2,6 @@ module.exports = {
   entry: "src/index",
   reactRefresh: true,
   output: {
-    publicUrl: "https://unliar.github.io/typescript-react-hightlight-words",
+    publicUrl: "https://unliar.github.io/typescript-react-highlight-words",
   },
 }

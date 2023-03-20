@@ -1,32 +1,32 @@
 import React from "react"
-import HightLight from "typescript-react-hightlight-words"
+import HighLight from "typescript-react-highlight-words"
 function App() {
   return (
     <div className="app">
       <h1>
-        <a href="https://github.com/unliar/react-hightlight-words">
-          typescript-react-hightlight-words
+        <a href="https://github.com/unliar/react-highlight-words">
+          typescript-react-highlight-words
         </a>{" "}
       </h1>
       <p>
-        <a href="https://github.com/unliar/react-hightlight-words/blob/main/examples/src/app.tsx">
+        <a href="https://github.com/unliar/react-highlight-words/blob/main/examples/src/app.tsx">
           source code
         </a>
       </p>
       <h2> as components</h2>
-      <HightLight
+      <HighLight
         text="this is a demo for you as components"
         words={["demo"]}
-        hightlightTag="span"
+        highlightTag="span"
         wrapperTag="div"
-        hightlightStyle={{ color: "red" }}
-      ></HightLight>
+        highlightStyle={{ color: "red" }}
+      ></HighLight>
       <h2>as function</h2>
       <div>
-        {HightLight({
+        {HighLight({
           text: "this is a demo for you as function",
           words: ["function", "for"],
-          hightlightStyle: { color: "blue" },
+          highlightStyle: { color: "blue" },
         })}
       </div>
     </div>

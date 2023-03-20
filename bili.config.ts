@@ -4,7 +4,7 @@ const config: Config = {
   input: "src/index.tsx",
   output: {
     format: ["cjs", "esm"],
-    moduleName: "ReactHightlightWords",
+    moduleName: "ReactHighlightWords",
     sourceMap: false,
     minify: true,
   },

@@ -1,5 +1,5 @@
 {
-  "name": "react-hightlight-words",
+  "name": "react-highlight-words",
   "private": true,
   "scripts": {
     "build": "poi --prod",
@@ -11,6 +11,6 @@
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "typescript-react-hightlight-words": "latest"
+    "typescript-react-highlight-words": "latest"
   }
 }

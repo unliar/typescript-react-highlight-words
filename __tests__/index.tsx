@@ -20,7 +20,7 @@ test("customer tag render", () => {
   const dom = render(
     <HighlightWords
       text={text}
-      hightlightTag="span"
+      highlightTag="span"
       wrapperTag="h6"
       words={["tag"]}
     ></HighlightWords>
@@ -29,13 +29,13 @@ test("customer tag render", () => {
   expect(dom.container.querySelector("h6")).toBeTruthy()
 })
 
-test("customer hightlightStyle render", () => {
-  const text = "test hightlightStyle"
+test("customer highlightStyle render", () => {
+  const text = "test highlightStyle"
   const dom = render(
     <HighlightWords
       text={text}
-      words={["hightlightStyle"]}
-      hightlightStyle={{ color: "red" }}
+      words={["highlightStyle"]}
+      highlightStyle={{ color: "red" }}
     ></HighlightWords>
   )
   // 命中两个

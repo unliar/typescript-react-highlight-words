@@ -1,9 +1,8 @@
 name: site
 
-on: 
-  workflow_dispatch: 
+on:
+  workflow_dispatch:
 jobs:
-  
   publish:
     runs-on: ubuntu-latest
     env:
@@ -44,4 +43,4 @@ jobs:
               
               compare: ${{ github.event.compare }}
 
-              online: https://unliar.github.io/typescript-react-hightlight-words/
+              online: https://unliar.github.io/typescript-react-highlight-words/

@@ -1,7 +1,7 @@
 {
-  "name": "typescript-react-hightlight-words",
-  "version": "2.0.15",
-  "description": "hightlight words in react",
+  "name": "typescript-react-highlight-words",
+  "version": "0.0.1",
+  "description": "highlight words in react",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "types/index.d.ts",
@@ -17,18 +17,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/unliar/typescript-react-hightlight-words.git"
+    "url": "git+https://github.com/unliar/typescript-react-highlight-words.git"
   },
   "keywords": [
     "react",
-    "hightlight"
+    "highlight"
   ],
   "author": "unliar",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/unliar/typescript-react-hightlight-words/issues"
+    "url": "https://github.com/unliar/typescript-react-highlight-words/issues"
   },
-  "homepage": "https://github.com/unliar/typescript-react-hightlight-words#readme",
+  "homepage": "https://github.com/unliar/typescript-react-highlight-words#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
