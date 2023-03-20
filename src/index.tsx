@@ -12,7 +12,7 @@ export interface HighlightWordsIProps {
   splitString?: string
 }
 export const SafeRegExpString = (str: string) => {
-  return RegExp.escape(str)
+  return str.replace(/[.*+?^${}()[\]\\]/g, "")
 }
 const HighlightWords = (props: HighlightWordsIProps) => {
   const {
