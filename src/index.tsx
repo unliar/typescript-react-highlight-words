@@ -17,15 +17,15 @@ export const SafeRegExpString = (str: string) => {
 const HighlightWords = (props: HighlightWordsIProps) => {
   const {
     words,
-    text,
+    text = "",
     highlightStyle,
     highlightTag = "mark",
     wrapperTag = React.Fragment,
     splitString = "#",
   } = props
   const keys = words?.filter((i) => !!i)
-  // if empty words input, return render text
-  if (!keys.length) {
+  // if empty words or text, return render text
+  if (!keys?.length || !text) {
     return React.createElement(wrapperTag, null, text)
   }
 
